@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { PrismaClient } = require("./prisma/app/generated/prisma/client");
+const { PrismaClient } = require("@prisma/client");
 const swaggerUi = require("swagger-ui-express");
 const swaggerJsdoc = require("swagger-jsdoc");
 

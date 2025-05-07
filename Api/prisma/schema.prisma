@@ -7,29 +7,38 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "./node_modules/@prisma/client"
 }
 
 
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
-
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
+
 model Content {
-  id            Int      @id @default(autoincrement())
+  id            String         @id @default(uuid())
   title         String
-  data   String
-  lastModified  DateTime @default(now()) 
-  image         String
-  topicId       Int      
-  topic         Topic    @relation(fields: [topicId], references: [id])
+  data          String
+  lastModified  DateTime       @default(now()) 
+  topic         Topic          @relation(fields: [topicId], references: [id])
+  topicId       String         
+  icon          String?        
+  images        ContentImage[] 
+}
+
+model ContentImage {
+  id        String   @id @default(uuid())
+  path      String
+  content   Content  @relation(fields: [contentId], references: [id])
+  contentId String
 }
 
 model Topic {
-  id          Int        @id @default(autoincrement())
+  id          String   @id @default(uuid())
   title       String
   description String
-  content     Content[]  
+  content     Content[]
+  icon        String?  
 }
 

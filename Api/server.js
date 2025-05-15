@@ -33,9 +33,9 @@ app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Use routes
 app.use(getData);
-app.use(postData);
-app.use(topicsRoutes);
-app.use(contentsRoutes);
+//app.use(postData);
+//app.use(topicsRoutes);
+//app.use(contentsRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

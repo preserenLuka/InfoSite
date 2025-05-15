@@ -1,7 +1,8 @@
 const express = require("express");
-const {} = require("../controllers/postDataController");
+const { createTopic } = require("../controllers/postDataController");
 const router = express.Router();
 
-router.get("/");
+// Route to create a new topic
+router.post("/topics", createTopic);
 
 module.exports = router;

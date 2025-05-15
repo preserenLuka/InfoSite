@@ -6,6 +6,7 @@ import ErrorPage from "./components/ErrorPage";
 import SearchPage from "./components/SearchPage";
 import TopicsPage from "./components/TopicsPage";
 import ContentPage from "./components/ContentPage";
+import TopicPage from "./components/TopicPage";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -18,7 +19,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { path: "", element: <SearchPage /> },
-      { path: "topics/:topicId", element: <TopicsPage /> },
+      { path: "topics/", element: <TopicsPage /> },
+      { path: "topics/:topicId", element: <TopicPage /> },
       { path: "topics/:topicId/:contentId", element: <ContentPage /> },
     ],
   },

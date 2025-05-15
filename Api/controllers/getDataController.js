@@ -56,10 +56,12 @@ const getDatalist = async (req, res) => {
     const datalist = [
       ...topics.map((topic) => ({
         title: topic.title,
+        id: topic.id,
         type: "topic",
       })),
       ...contents.map((content) => ({
         title: content.title,
+        id: content.id,
         type: "content",
         topicId: content.topicId,
       })),

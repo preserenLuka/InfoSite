@@ -37,21 +37,6 @@ const TopicsPage = () => {
         title: "Topic 4",
         description: "This is the fourth topic.",
       },
-      {
-        id: 5,
-        title: "Topic 5",
-        description: "This is the fifth topic.",
-      },
-      {
-        id: 6,
-        title: "Topic 6",
-        description: "This is the sixth topic.",
-      },
-      {
-        id: 7,
-        title: "Topic 7",
-        description: "This is the seventh topic.",
-      },
     ];
 
     setTopics(templateData);
@@ -62,16 +47,20 @@ const TopicsPage = () => {
       <Typography variant="h4" gutterBottom>
         Topics
       </Typography>
+      import Grid from '@mui/material/Grid';
       <Grid container spacing={2}>
-        {topics.map((topic) => (
-          <Card>
-            <CardContent>
-              <Typography variant="h5">{topic.title}</Typography>
-              <Typography variant="body2">{topic.description}</Typography>
-              {topic.icon && <Box>{topic.icon}</Box>}
-            </CardContent>
-          </Card>
-        ))}
+        <Grid size={8}>
+          <Box>size=8</Box>
+        </Grid>
+        <Grid size={4}>
+          <Box>size=4</Box>
+        </Grid>
+        <Grid size={4}>
+          <Box>size=4</Box>
+        </Grid>
+        <Grid size={8}>
+          <Box>size=8</Box>
+        </Grid>
       </Grid>
     </Box>
   );
